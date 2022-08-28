@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Cmake
+CMakeLists.txt
+cmake-build-debug
+
+# Pycharm & Clion
+.idea/
+
+# Mac Specific File
+.DS_Store
