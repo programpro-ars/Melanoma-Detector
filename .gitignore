@@ -137,3 +137,9 @@ cmake-build-debug
 
 # Mac Specific File
 .DS_Store
+
+# Visualization implementation
+Visualization.py
+
+# Personal Data
+secure_data.txt
