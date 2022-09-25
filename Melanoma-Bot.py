@@ -1,5 +1,5 @@
 ###################################################
-# Melanoma-Detector Bot Blueprint                 #
+# Melanoma-Detector Bot                           #
 # by Arseniy Arsentyev (programpro.ars@gmail.com) #
 ###################################################
 import telebot
