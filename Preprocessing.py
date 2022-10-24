@@ -5,6 +5,7 @@
 from skimage.color import rgb2gray
 from skimage.filters import threshold_isodata
 from skimage.io import imread
+from skimage.transform import resize
 import scipy.ndimage as ndi
 from collections import deque
 import numpy as np
@@ -143,6 +144,16 @@ class Coefficients:
     def get_mask_image(self):
         """ Return mask image """
         return self.mask
+
+
+class Resizer:
+    def __init__(self, image):
+        img = resize(image, (512, 512))
+        img = 255 * img
+        self.image = np.array(img.astype(np.uint8))
+
+    def get_resized_image(self):
+        return self.image
 
 
 # If program is used in console, show simple CLI
