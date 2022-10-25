@@ -2,8 +2,8 @@
 ### Part 1. Preprocessing
 Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text
 
-![Example 1](https://i.ibb.co/7JdCZj9/plot-12.png)
-![Example 2](https://i.ibb.co/0ykshx4/plot-15.png)
+![Example 1](https://i.ibb.co/7JdCZj9/plot.png)
+![Example 2](https://i.ibb.co/0ykshx4/plot.png)
 
 ### Part 2. Deep Learning
 Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text
