@@ -35,6 +35,7 @@ Results:
 ![Example 2](readme-images/telegram.png)
 
 <h2 align="center">To Be Developed</h2>
+
 1) Real-Time Detection
    - From video file
    - From camera
