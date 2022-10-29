@@ -36,18 +36,6 @@ Results:
 
 <h2 align="center">To Be Developed</h2>
 
-1) Real-Time Detection
-   - From video file
-   - From camera
-   
-
-2) API
-   - Preprocessing service
-   - Classification API
-
-
-3) Further Experiments
-   - ResNet
-   - ConvNeXtXLarge
-   - PyTorch Implementation
-   - Sklearn ML models
+- [ ] Real-Time Detection (winter 2022-23)
+- [ ] API (spring 2023)
+- [ ] Other NN architectures (summer 2023)
