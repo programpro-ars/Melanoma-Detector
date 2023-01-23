@@ -2,44 +2,24 @@
 # Melanoma-Detector Telegram Bot                  #
 # by Arseniy Arsentyev (programpro.ars@gmail.com) #
 ###################################################
+import keras.models
 import telebot
 import numpy as np
-from keras.models import Sequential
-from keras.applications import VGG19
-from keras.layers import Dense, Flatten, Normalization, Dropout
 from skimage.io import imread
 from skimage.transform import resize
 from random import randint
 
 # Path to the folder where data will be stored
-where_to_process = 'bot-data/'
-
+where_to_process = '/Users/b_arsick/Desktop/bot-data/'
 # Unique telegram bot API
 bot_api = '5661381114:AAGr11cIwaJ8cCCWFFEQlFEjKPHgREp8yHg'
-
 # Path to the model's weights
-weights_file = '/Users/b_arsick/Desktop/cnn-model.hdf5'
+weights_file = 'pre-trained-cnn-model.h5'
 
 # Initialization of a bot
 bot = telebot.TeleBot(bot_api)
 # Create a sequential tf model
-model = Sequential()
-# Initialize VGG19 pretrained model
-vgg19 = VGG19(include_top=False, classes=2, input_shape=(512, 512, 3))
-vgg19.trainable = False
-# Add normalization to standardize an input
-model.add(Normalization())
-model.add(vgg19)
-model.add(Flatten())
-# Add 3-layer dense network with dropouts to prevent overfitting
-model.add(Dense(4096, activation='relu'))
-model.add(Dropout(0.5))
-model.add(Dense(256, activation='relu'))
-model.add(Dropout(0.3))
-model.add(Dense(1, activation='sigmoid'))
-
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.load_weights(weights_file)
+model = keras.models.load_model(weights_file)
 
 users = []
 
@@ -69,7 +49,7 @@ def handle_file(message):
     img = img.astype(np.uint8)
     arr = [img]
     arr = np.array(arr)
-    prediction = round(model.predict(arr)[0][1] * 100)
+    prediction = round(model.predict(arr) * 100)
     percent = 1
     if prediction == 0:
         percent = randint(2, 10)
@@ -105,12 +85,9 @@ def handle_file(message):
     img = img.astype(np.uint8)
     arr = [img]
     arr = np.array(arr)
-    prediction = round(model.predict(arr)[0][1] * 100)
+    prediction = model.predict(arr)
     percent = 1
-    if prediction == 0:
-        percent = randint(2, 10)
-    elif prediction == 100:
-        percent = randint(70, 85)
+    print(prediction)
     if percent < 50:
         sticker = 'CAACAgIAAxkBAAEYdyZjMstSK-3puYsE6nfFIFX9VmzUxgACpSEAAlHnmUkpNUn9EcHhBSkE'
     else:
