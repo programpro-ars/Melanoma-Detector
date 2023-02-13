@@ -119,6 +119,35 @@ The usage of the bot is pretty straightforward:
 2) Send an image or a file of a skin lesion.
 3) Get the diagnosis: ok or might be cancerous.
 
+### Part 4. Real-Time Detection
+My project contains a realization of a fast model for melanoma detection. It is based on the MobileNet keras application, and
+it is able to process up to 30 frames a second. So, now it is possible to get approximate predictions in real time. You
+can adjust parameters and train your own model using [Fast-CNN-Model.ipynb](Fast-CNN-Model.ipynb).
+
+Also, I did an OpenCV app, which is using computer's webcam as a detection camera. It produces pretty accurate predictions
+with the overall 65% accuracy. The framerate is about 15 frames/second. 
+
+It is easy to use the app:
+1) Run the [Real-Time-Detector.py](Real-Time-Detector.py).
+2) Place a lesion near the camera.
+3) Get the prediction - you will see a rectangle in the upper-left corner. If it is red, then the lesion is probably cancerous. Otherwise,
+it is probably not.
+
+#### Down below are the examples of the program usage:
+
+When NN cannot detect any lesions, the rectangle is green.
+
+![state.jpg](readme-images/state.png) 
+
+It is also green when skin condition is normal and NN does not identify lesions as cancerous.
+
+![normal.jpg](readme-images/normal.png)
+
+However, the rectangle instantly became red when there is a probability that lesions are cancerous. For the demonstration below I
+placed my iPad with the photo of a melanoma near the camera. NN easily detected it.
+
+![lesion.jpg](readme-images/lesion.png)
+
 ### Appendix: Quick Start
 1) Download ISIC 2020 dataset.
 2) Specify the path to the dataset in [Data-Transformer.py](Data-Transformer.py).
@@ -135,6 +164,6 @@ to one of the files with -Model postfix.
 - [x] Data formatting and preprocessing (September 2022)
 - [x] Deep learning models and bot blueprint (October 2022)
 - [x] Melanoma-Detector bot release (January 2023)
-- [ ] Real-Time melanoma detection (February 2023)
+- [x] Real-Time melanoma detection (February 2023)
 - [ ] API and additional deep learning models (March 2023)
 - [ ] Final readme and summing up (April 2023)
