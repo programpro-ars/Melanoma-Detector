@@ -165,5 +165,4 @@ to one of the files with -Model postfix.
 - [x] Deep learning models and bot blueprint (October 2022)
 - [x] Melanoma-Detector bot release (January 2023)
 - [x] Real-Time melanoma detection (February 2023)
-- [ ] API and additional deep learning models (March 2023)
 - [ ] Final readme and summing up (April 2023)
